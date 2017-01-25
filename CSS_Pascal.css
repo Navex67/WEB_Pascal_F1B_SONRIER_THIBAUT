@@ -1,0 +1,139 @@
+/*
+Theme Name: Theme site web cours PASCAL
+Theme URI: ludus1B.com
+Author: Thibaut Sonrier
+Description: Theme css site web cours PASCAL
+Version:1.0
+License: Ludus1B
+License URI: Ludus1B.com
+Text Domain: ludus1B
+*/
+
+
+header{
+	background-color:#a8a8a8;
+	color : white;
+	text-align:center;
+}
+
+
+nav{
+	display:flex;
+	float : left;
+	width : 20%;						/*mise en place du menu qui suit le scroll */
+	border: 5px solid #00a3a8;
+	position:fixed;
+}
+
+strong{
+	color:#caca64;
+}
+
+mark{
+	background-color:#54fc54;
+	color : black;
+}
+h3{
+	color:white;
+	text-align : center;
+}
+
+.Titre{
+	text-align:justify;
+}
+h4{
+	color:#caca64;
+	
+}
+
+h5{
+	color:#caca64;
+}
+body{
+	background-color:#0000a8;
+	font-family: 'Overpass', sans-serif;			/*couleur du background bleu et changement de police globale*/
+}
+
+p{
+	text-align:justify;
+	margin-right:5px;				/*changement de couleur de la police et espacement entre les bordures*/
+	margin-left: 5px;
+	color:white;
+	
+}
+
+#type{
+	text-align:justify;
+	width:40%;
+	margin: 5px;
+	border:3px solid #caca64;		/*mise en place des cadres pour les li ici les types*/
+	padding:20px;
+	margin-bottom:50px; 
+	overflow: auto;
+	color : white;
+	
+}
+
+.ope{
+	text-align:justify;
+	width:40%;
+	margin: 5px;
+	border:3px solid #caca64;			/*mise en place des cadres pour les li ici les opérations*/
+	padding:20px;
+	margin-bottom:50px; 
+	overflow: auto;
+	color : white;
+	
+	
+}
+
+li a{
+	text-decoration:none;
+	color: #54fc54;		/*changement des couleurs des encrages dans le menu*/
+}
+
+a{
+	color : #54fc54;
+}
+.exemple{
+	text-align:justify;
+	width:40%;
+	margin:0 auto;
+	max-width: 800px;
+	min-width: 200px;
+	border:1px solid black;				/*effet de capsule pour les exemples pour les rendres plus lisibles et les distingués*/
+	padding:35px;
+	margin-bottom:50px; 
+	overflow: auto;
+	color:black;
+	background-color:#a8a8a8;
+	border-radius:15px 15px 15px 15px;
+}
+
+.imageflottante{
+	display:block;
+	margin-left: auto;
+	margin-right: auto;			/*reduction de la taille initiale de l'image et la centrage*/
+	width:363px;
+	height:262px;
+
+}
+
+section{
+	border:5px solid #00a3a8;
+	margin-bottom: 25px;
+	float: right;				/*contour de chaques chapitres pour les distinguer et réduction de la taille des sections pour laisser de la place au menu*/
+    width: 78%;
+
+}
+
+#bottom{
+	text-align:center;
+}
+
+footer{
+	background-color:#a8a8a8;
+	color : white;
+	float: right;
+    width: 78%;
+}

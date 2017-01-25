@@ -1,0 +1,444 @@
+<!--Document au format html5-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Cours Pascal</title>
+		<link rel="stylesheet" type="text/css" href="CSS_Pascal.css">
+		<link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
+	</head>
+	
+	
+	<body>
+		<header>
+			<h1>FREE PASCAL : COURS DE PROGRAMMATION</h1>
+		</header>
+		
+		
+		<nav>
+			<h3>MENU DU COURS</h3>
+			<ul id="menu">
+				<li><a href="#Chap 1">Chapitre 1 : Structure de la programmation en PASCAL</a></li>
+				</br>
+				<li><a href="#Chap 2"> Chapitre 2 : Variables et Constantes</a></li>
+				</br>
+				<li><a href="#Chap 3"> Chapitre 3 : Entrées/Sorties</a></li>
+				</br>
+				<li><a href="#Chap 4">Chapitre 4 : Fonctions PASCAL</a></li>
+				</br>
+				<li><a href="#Chap 5"> Chapitre 5 : Structures conditionelles, Boucles</a></li>
+				</br>
+				<li><a href="#Chap 6"> Chapitre 6 : Fonctions et Procédures</a></li>
+				</br>
+				<li><a href="#Chap 7"> Chapitre 7 : Tableaux/Types</a></li>
+				</br>
+			</ul>
+		</nav>
+		
+		<section>
+			<h3 id="Chap 1">Chapitre 1 : Structure de la programmation en PASCAL</h3>
+				<article>
+					<img src="image/Hello_World.png" class="imageflottante"/>
+					<p>La structure algorithmique concerne la concaténation et les imbrications de séquences et ruptures de séquences.
+					Elle forme ainsi une partie d'un programme. Pour pouvoir répondre à toutes les éventualités nous devons structurer nos algorithmes 
+					(donc nos programmes et donc nos pensées). La programmation en PASCAL est très proche de l'algorithmie et il est donc facile d'en
+					comprendre la structure par exemple.</br>
+					Ce programme affiche la chaine de caractères « Bonjour » à l’écran :</br>
+					<p class="exemple">PROGRAM bonjour;</br>
+					BEGIN</br>
+					writeln (’Bonjour’);</br>
+					END.</p></br>
+					<p>Le compilateur est un logiciel qui lit (analyse) un programme et le traduit en code machine, directement exécutable par le processeur de l’ordinateur.</br>
+					On peut placer un {commentaire} dans un programme au-dessus ou à coté d’une instruction. Le commentaire n’est pas pris en compte a` la compilation. 
+					Il sert à rendre le programme plus clair à la lecture, à noter des remarques, etc.</br>
+					La trace d’un programme est obtenue en placant des writeln pour que le programme affiche les valeurs des variables à l’exécution.
+					✴Une instruction est un ordre élémentaire - au sens algorithmique, que peut exécuter un programme. Deux instructions d'entrée-sortie : </br>
+					✴LIRE / readln(var)	: lecture de la frappe (au clavier) </br>
+					✴ECRIRE / writeln(var)	: afﬁchage (à l'écran) </p>
+					
+				</article>
+		</section>
+		<section>
+			<h3 id="Chap 2">Chapitre 2 : Variables et Constantes</h3>
+				<article>
+					<h4>Les variables</h4>
+					<p>Dans un programme informatique, on va avoir en permanence besoin de stocker provisoirement des valeurs. 
+					Il peut s’agir de données issues du disque dur, fournies par l’utilisateur (frappées au clavier), une manette, une balance. 
+					Il peut aussi s’agir de résultats obtenus par le programme, intermédiaires ou déﬁnitifs. Ces données peuvent être de plusieurs types : des nombres, du texte, une image, etc. 
+					Toujours est-il que dès que l’on a besoin de stocker une information au cours d’un programme, on utilise une variable. Pour employer une image, une variable est une boîte, que le programme (l’ordinateur) va repérer par une étiquette. 
+					Pour avoir accès au contenu de la boîte, il sufﬁt de la désigner par son étiquette.
+					Les langages informatiques plus évolués (ce sont ceux que presque tout le monde emploie) se chargent précisément, entre autres rôles, d’épargner au programmeur la 
+					gestion fastidieuse des emplacements mémoire et de leurs adresses.</br>
+					
+					Il est donc évident que pour manipuler une variable elle doit d’abord être déﬁnie.</br>
+					Les opérations élémentaires possibles sur les variables sont:</br>
+					✴Déclaration ✴Affectation ✴Utilisation ✴Ré-affectation </p>
+					
+					<ul id="type">
+						<p>Les types élémentaires possibles sont:</p>
+						<li> Les entiers : integer</li>
+						<li>Les réels : real</li>
+						<li>Les caractères : char</li>
+						<li>Les chaînes de caractères : string</li>
+						<li>Les booléens : boolean</li>
+					</ul>
+					
+					<p class="exemple">PROGRAM cercle (input,output); (* entête *) </br>
+					 <strong>VAR</br>
+					   perimetre, diametre(variables) : REAL(type); (* déclarations *)</strong></br>
+					   BEGIN</br>
+					   readln(diametre); (* instruction *)</br>
+					   perimetre := 3.141592 * diametre; (* instruction *)</br>
+					   writeln(diametre,perimetre) (* instruction *) </br>
+					   END.</p></br>
+					   </br>
+					  <p> En Turbo Pascal, les entiers admissibles sont compris entre -32768 et +32767. 
+					   Tous les compilateurs Pascal possèdent une constante prédéclarée MAXINT, qui donne le plus grand entier admissible.</br>
+					   </br>
+					   Les réels doivent être compris en Turbo Pascal entre + et -1.7E37 (c'est-à-dire 1,7 fois 10 puissance 37), avec 11 chiffres significatifs. 
+					   La virgule décimale est toujours représentée par un point en informatique. </p>
+
+					   <h4>Les constantes</h4>
+					   <p>
+					   Pourquoi utiliser une constante plutôt qu’une variable ? </br>
+						✴Optimisation ✴Fiabilité ✴Souplesse  ✴facilité de relecture</br>
+						Nous avons déjà utilisé des variables (on donne un nom à une mémoire). 
+					   Mais on peut également utiliser des constantes, qui sont des valeurs qui restent fixes tout au long du programme et pour chaque exécution.
+					   On déclare les constantes avant de déclarer les variables, par :</br>
+					   </br>
+						CONST nom = valeur; </br>
+						Exemple :</br>
+						</br>
+						CONST taux_tva = 18.6;</br>
+						</br>
+						On peut également avoir des constantes de type "chaîne de caractères" :</br>
+						PROGRAM bonjour (output); { on n'a pas besoin ici du clavier } </br> 
+						CONST </br>
+						message1 = 'salut, ça va ?';</br>  
+						message2 = 'moi ça baigne';</br>  
+						BEGIN </br> 
+						writeln(message1);</br>
+						writeln(message2);</br>
+						END.</br>
+						Le type de la constante est déterminé automatiquement par le compilateur (entier si nombre sans point, réel si nombre avec point, caractères si entre cotes).</br> 
+						Remarque 1 : on peut toujours utiliser un entier à la place d'un réel mais pas l'inverse.</br>
+						Remarque 2 : si on utilise un point décimal, il faut l'encadrer de chiffres (0.3 et non .3, 10 ou 10.0 et non 10.).</br></p>
+						
+				</article>
+			</section>
+				
+			<section>
+				<h3 id="Chap 3"> Chapitre 3 : Entrées/Sorties </h3>
+					<article>
+							<p>La procédure <strong>Write</strong> permet d'afficher du texte et de laisser le curseur à la fin du texte affiché. 
+							Cette instruction permet d'afficher des chaînes de caractères n'excédant pas 255 signes ainsi que des valeurs de variables, de constantes, de types... Le texte doit être entre apostrophes. 
+							Si le texte à afficher contient une apostrophe, il faut alors la doubler. Les différents noms de variables doivent êtres séparés par des virgules.</br>
+							La procédure WriteLn est semblable à la précédente à la différence près que le curseur est maintenant renvoyé au début de la ligne suivante.</br>
+							Exemple : WriteLn ('Texte avec renvoi à la ligne');</br>
+							</br>
+							La procédure <strong>Read</strong> permet à l'utilisateur de rentrer une valeur qui sera utilisée par le programme.
+							Cette instruction ne provoque pas de retour chariot, c'est-à-dire que le curseur ne passe pas à la ligne.</br>
+							La procédure ReadLn permet à l'utilisateur d'entrer une valeur qui sera utilisée par le programme. 
+							Cette instruction provoque le retour chariot, c'est-à-dire que le curseur passe au début de la ligne suivante. 
+							Lorsqu'aucune variable n'est affectée à la commande, il suffit de presser sur Entrée.</br>
+							Exemple : readln(variable);</p>
+							
+					</article>
+			</section>
+			
+			
+			<section>
+				<h3 id="Chap 4">Chapitre 4 : Fonctions PASCAL</h3>
+					<article>
+						<h4>Opérateurs possible :</h4>
+						<h5>Operateurs mathématiques</h5>
+						<ul class="ope">
+							<li>+	Addition - Union</li>
+							<li>-	Soustraction - Complément</li>
+							<li>*	Multiplication - Intersection</li>
+							<li>/	Division</li>
+							<li>div	Quotient de la division entière</li>
+							<li>mod	Modulus : c'est le reste de la division entière</li>
+							<li>=	Egalité</li>
+						</ul>
+
+							<p>Opérateurs prioritaires : *, /, div et mod.</br>
+							Opérateurs secondaires : + et -.</br>
+							Vous pouvez utiliser des parenthèses.</br></p>
+							
+						<h5>Opérateurs relationnels</h5>
+						<ul class="ope">
+							<li><	Inférieur strict</li>
+							<li><=	Inférieur ou égal - Inclus</li>
+							<li>>	Supérieur strict</li>
+							<li>>=	Supérieur ou égal - Contient</li>
+							<li><>	Différent</li>
+						</ul>
+							
+						<h5>Opérateurs logiques</h5>
+						<ul class="ope">
+							<li>AND	Le "et" logique des maths</li>
+							<li>OR	Le "ou"</li>
+							<li>XOR	Le "ou" exclusif</li>
+							<li>NOT	Le "non"</li>
+						</ul>
+							</br>
+							<p>Opérateur ultra-prioritaire : NOT.</br>
+							Opérateur semi-prioritaire : AND.</br>
+							Opérateurs non prioritaires : OR et XOR.</br></p>
+							<p> Il existe pleins de fonctions possibles en pascal pour sela je vous invite à aller voir ce lien :<a href="http://www.freepascal.org/docs-html/current/rtl/" title="bases FPC">Références et bases FPC</a></p>
+					</article>
+			</section>
+			<section>
+				<h3 id="Chap 5">Chapitre 5 : Structures conditionelles, Boucles</h3>
+					<article>
+						<h4>Structures conditionelles</h4>
+						<p>	Une instruction conditionnelle permet d'exécuter des instructions seulement dans une certaine condition.</br>
+							<strong>if..then..</br></strong></p>
+							<p class="exemple">exemple :</br>
+							var </br>
+							age : integer;</br>
+							</br>
+							begin</br>
+							writeln('Quel est ton âge?');</br>
+							readln(age);</br>
+							</br>
+							if (age < 18) then</br>
+								writeln('Tu es mineur.');</br>
+							</br>
+							end.</p></br>
+							<p>Ainsi, dans l'exemple ci-dessus, le programme indiquera à l'utilisateur qu’il est mineur seulement s'il son âge est strictement inférieur à 18.</br>
+							<strong>if..then..else</br></strong></p>
+							<p class="exemple">Exemple :</br>
+							age : integer;</br>
+							</br>
+							begin</br>
+							writeln('Quel est ton âge?');</br>
+							readln(age);</br>
+							</br>
+							if (age < 18) then</br>
+							begin</br>
+								writeln('Tu es mineur.')</br>
+							end</br>
+							else</br>
+							begin
+								writeln('Tu es majeur.')</br>
+							end</br>
+							</br>
+							end.</p></br>
+							<p>Remarque : On peut se passer de else en n’employant que des if then, mais c’est moins efficace, et on peut facilement se trompe</br>
+							</br>
+							<strong>case...of...end</strong></br>
+							Cette instruction compare la valeur d'une variable de type scalaire à tout un tas d'autres valeurs constantes.</p></br>
+							<p class="exemple">Exemple : </br>
+							</br>
+							Program Exemple;</br>
+							Var Age : Integer;</br>
+							</br>
+							Begin</br>
+							Write('Entrez votre âge : ');</br>
+							Readln(Age);</br>
+							</br>
+							case Age of</br>
+							18 : WriteLn('La majorité, pile-poil !');</br>
+							0..17 : WriteLn('Venez à moi, les petits enfants...');</br>
+							60..99 : WriteLn('Les infirmières vous laissent jouer sur l''ordinateur à votre âge ?!!!');</br>
+							else WriteLn('Vous êtes d''un autre âge...');</br>
+							end ;</br>
+							</br>
+							End.</br></p>
+							</br>
+							<h4>Les boucles</h4>
+							<p>	Les boucles, c'est généralement le point douloureux de l'apprenti programmeur. C'est là que ça coince, car autant il est assez facile de comprendre comment fonctionnent les boucles, autant il est souvent long d'acquérir les réflexes qui permettent de les élaborer judicieusement pour traiter un problème donné.
+								On peut dire en fait que les boucles constituent la seule vraie structure logique caractéristique de la programmation. Si vous avez utilisé un tableur comme Excel, par exemple, vous avez sans doute pu manier des choses équivalentes aux variables (les cellules, les formules) et aux tests (la fonction SI…). Mais les boucles, ça, ça n'a aucun équivalent. Cela n'existe que dans les langages de programmation proprement dits.
+								Le maniement des boucles, s'il ne différencie certes pas l'homme de la bête (il ne faut tout de même pas exagérer), est tout de même ce qui sépare en informatique le programmeur de l'utilisateur, même averti.</br>
+								</br>
+								<strong>WHILE...DO...</strong></br>
+								Ce type de boucle, évalue une condition avant d'exécuter des instructions ,c'est-à-dire qu'on peut ne pas entrer dans la structure de répétition si les conditions ne sont pas favorables.
+								De plus, au moins une variable de l'expression d'évaluation doit être sujette à modification au sein de la structure de répétition pour qu'on puisse en sortir.</br>
+								Syntaxe :</br>
+								While variable condition valeur Do</br>
+								</br>
+								Begin</br>
+								...</br>
+								commandes</br>
+								...</br>
+								End ;</br>
+								</br>
+								<strong>FOR ... := ... TO ... DO..</strong></br>
+								Cette instruction permet d'incrémenter une variable à partir d'une valeur inférieur jusqu'à une valeur supérieur et d'exécuter une ou des instructions entre chaque incrémentation. 
+								Les valeurs extrémum doivent être des entiers (integer) ou des caractères de la table ASCII (char).La boucle n'exécute les instructions de son bloc interne que si la valeur inférieur est effectivement inférieur ou égale à celle de la borne supérieur.</br>
+								Remarque : On rentre obligatoirement dans la boucle</br>
+								<u>Syntaxe :</u></br>
+								For variable := borne inférieur To borne supérieur Do
+								</br>
+								Begin</br>
+								...</br>
+								commandes</br>
+								...</br>
+								End ;</br>
+								</br>
+								<strong>REPEAT...UNTIL...</strong></br>
+								Cette boucle effectue les instructions placées entre deux bornes (repeat et until) et évalue à chaque répétition une condition de type bouléenne avant de continuer la boucle pour décider l'arrêt ou la continuité de la répétition. 
+								Il y a donc au moins une fois exécution des instructions. Il est nécessaire qu'au moins une variable intervenant lors de l'évaluation de fin de boucle soit sujette à modification à l'intérieur de la structure exécutive interne à la boucle.</br>
+								<u>Syntaxe :</u></br>
+								Repeat</br>
+								...</br>
+								commandes</br>
+								...</br>
+								Until variable condition valeur ;</br></p>
+					</article>
+			</section>
+			<section>
+					<h3 id="Chap 6">Chapitre 6 : Fonctions et Procédures</h3>
+					<article>
+						<p>	Tous les algorithmes que nous avons étudiés jusqu’à présent étaient constitués d’un seul bloc (dit principal). Dans certains cas le programmeur peut vouloir décrire et sauvegarder un enchaînement d’actions qui n’existe pas de façon standard dans le compilateur (ou l’interpréteur). 
+							Cette sauvegarde lui permettra d’utiliser cet enchaînement autant de fois qu’il en aura besoin dans le programme, et cela au moyen d’un simple appel.
+							Cet usage est pratique lorsqu’on fait face à un algorithme complexe. Le programmeur décompose donc le problème en mini-blocs ayant chacun un rôle bien précis. Ces mini- blocs sont des sous-programmes (sous-algorithmes) appelés Procédures ou Fonctions.</br>
+							</br>
+							<strong>Les PROCEDURES</strong></br>
+							<u>Definition :</u></br>
+							Comme son nom l’indique, une procédure c’est le déroulement classique d’un processus. 
+							lle peut être judiciaire, culinaire, mathématique, informatique, etc. Mais dans tous les cas elle est toujours déclenchée par quelque chose ou bien par quelqu’un. 
+							On peut également dire qu’une procédure est une fonction qui ne renvoie pas de résultat.</br>
+							</br>
+							<u>Structure : </u></br>
+							Une procédure est un mini-programme qu’on déclare en général dans la partie réservée aux variables, ce afin de pouvoir utiliser les variables globales.
+							Étant donné qu’il s’agit d’un bloc à part entière, elle possèdera éventuellement un en-tête, une série de traitements, et une gestion des résultats tout comme l’algorithme qui la contient. 
+							En outre, une procédure peut également recevoir des arguments qui lui seront alors passés en paramètres.</br>
+							</br>
+							<u>Remarque : </u></br>
+							Lorsque la  déclaration ci-dessus est  faite, il  suffit  ensuite d’écrire le  nom  de  la procédure dans le bloc principal pour déclencher la liste des actions décrites. 
+							Une procédure peut appeler d’autres sous-programmes définis avant elle.
+							La liste des paramètres est facultative. Mais quand elle existe, ces paramètres sont déclarés de la même façon qu’on déclare une série de variables de différents types.
+							Les variables déclarées à l’intérieur de la procédure sont inutilisables à l’extérieur du bloc. 
+							Si leur type est prédéfini, alors ce type sera déclaré dans l’en-tête du bloc principal. Idem pour les paramètres de la procédure au cas où il en existe.</br>
+							</br>
+							<u>Syntaxe : </u></br>
+							Program nom_de_programme;</br>
+							</br>
+							Procedure nom_de_procedure ( noms_de_variables : types );</br>
+							Begin</br>
+							...</br>
+							...</br>
+							End;</br>
+							</br>
+							BEGIN</br>
+								nom_de_procedure ( noms_d_autres_variables_ou_valeurs );</br>
+							END.</br>
+							</br>
+							<strong>Les FONCTIONS</strong></br>
+							<u>Definition : </u></br>
+							De la même manière qu’une procédure, une fonction est un sous-programme destiné à effectuer un enchaînement de traitements à l’aide d’un simple appel. 
+							Cependant, une fonction a pour but principal d’effectuer un calcul puis de renvoyer un résultat.</br>
+							</br>
+							<u>Structure : </u></br>
+							Une fonction est un mini-programme qu’on déclare dans la partie réservée aux variables, ce afin de pouvoir utiliser les variables globales. 
+							Étant donné qu’il s’agit d’un bloc à part entière, elle possèdera éventuellement un en-tête, une série de traitements, et une gestion des résultats tout comme l’algorithme qui la contient. 
+							En outre, une fonction peut également recevoir des arguments qui lui seront alors passés en paramètres.</br>
+							</br>
+							<u>Syntaxe : </u></br>
+							Function nom_de_fonction (variable : type ) : type; //les paramètres ne sont pas obligatoire</br>
+							Var { déclaration de variables locales }</br>
+							Begin</br>
+							...</br>
+							nom_de_fonction := une_valeur;</br>
+							End;</br>
+							</br>
+							<strong>Les PARAMETRES</strong></br>
+							<u>Généralités :</u> </br>
+							Avant de voir comment un sous-bloc exploitera ses paramètres, voici quelques notions : Une  <mark>variable globale</mark> est une variable définie dans l’en-tête du programme principal. 
+							Elle est utilisable dans n’importe quel sous-programme sans nécessité de redéfinition. 
+							Toutefois, si dans un sous-bloc il existe une variable qui porte le même nom que la variable globale, alors c’est cette variable locale qui sera considérée à l’intérieur du sous-bloc. 
+							Une <mark>variable locale</mark> est une variable définie à l’intérieur d’un sous-programme. Sa portée (visibilité) est limitée au bloc qui la contient. 
+							Il serait donc erroné de l’utiliser dans le bloc principal ou dans un autre sous-bloc appartenant au programme.</br>
+							</br>
+							Considéré comme une variable locale, un paramètre est une valeur du bloc principal dont le sous-programme a besoin pour  
+							Exécuter avec des données réelles l’enchaînement d’actions qu’il est chargé d’effectuer. On distingue 2 types de paramètres : </br>
+							o  Les paramètres formels qui sont la définition du nombre et du type de valeurs que devra recevoir le sous-programme pour se mettre en route avec succès.
+							On déclare les paramètres formels pendant la déclaration du sous-programme.</br> 
+							o  Les paramètres effectifs qui sont des valeurs réelles (constantes ou variables) reçues par le sous-programme au cours de l’exécution du bloc principal. 
+							On les définit indépendamment à chaque appel du sous-programme dans le programme principal</br>
+							</br>
+							<u>Fonctionnement et utilisation des paramètres :</u></br> 
+							Lorsque la déclaration d’un sous-programme comporte des paramètres formels, ceux-ci, doivent être représentés chacun par son identificateur ainsi que par son type. 
+							Ainsi pendant la construction de l’algorithme principal, il faudra toujours veiller à ce que chaque appel du sousprogramme soit suivi d’une liste de paramètres effectifs correspondant (en nombre, rang, et type) à la liste des paramètres formels.
+							Cependant les noms des paramètres de même ordre ne sont pas obligatoirement identiques. 
+							On a vu plus haut qu’un paramètre effectif pouvait être une constante ou une variable. Lorsqu’il s’agit d’une variable, 2 cas de figures se proposent :</br>
+							</br>
+							1) Utiliser la valeur de la variable et à la sortie du sousprogramme lui restituer cette valeur malgré les éventuelles  modifications subies. 
+							<mark>On parle de passage de paramètre par valeur.</mark></br> 
+							2) Utiliser  la  variable  elle-même  et  lui  attribuer  dans  le  bloc  principal  les modifications rencontrées dans le sous-programme. 
+							<mark>On parle de passage de paramètre par adresse.</mark></br>
+							NB : un sous-programme avec paramètres est très utile parce qu’il permet de répéter une série d’opérations complexes pour des valeurs qu’on ne connaît pas à l’avance.</br> 
+							</br>
+							<u>A- Passage de paramètres par valeur</u></br>
+							Comme on l’a dit, passer un paramètre par valeur revient à n’utiliser que la valeur de la variable au moment où elle est passée en paramètre. 
+							À la fin de l’exécution du sous- programme, la variable conservera sa valeur initiale. </br>
+							Syntaxe : </br>
+							</br>
+							PROCEDURE <nom_procédure> (param1 :type1 ; param2, param3 :type2)</br>
+							</br>
+							FUNCTION<nom_Fonction>( param1 :type1 ; param2, param3 :type2) :Type </br>
+							</br>
+							<u>B- Passage de paramètres par adresse (ou par variable)</u>  </br>
+							Ici, il s’agit non plus d’utiliser simplement la valeur de la variable, mais également son emplacement dans la mémoire (d’où l’expression « par adresse »).
+							En fait, le paramètre formel se substitue au paramètre effectif durant le temps d’exécution du sous-programme. 
+							Et à la sortie il lui transmet sa nouvelle valeur. 
+							Un tel passage de paramètre se fait par l’utilisation du mot-clé var (uniquement sur le paramètre formel, et jamais sur un paramètre effectif).  </br>
+							Syntaxe : </br>
+							 </br>
+							FUNCTION <nom_fonction> (VAR param1 :type1 ; param2 :type2) : entier </br> 
+							NB : Il est possible de passer des paramètres par valeur et adresse dans la même fct ou procédure  </br></p>
+					</article>		
+			</section>
+			<section>
+					<h3 id="Chap 7">Chapitre 7 : Tableaux/Types</h3>
+					<article>
+						<p>Il est courant d'utiliser des tableaux afin d'y stocker temporairement des données. Ainsi, une donnée peut être en relation avec 1, 2 ou 3 (ou plus) entrées. 
+						L'intérêt du tableau est de pouvoir stocker en mémoire des données que l'on pourra retrouver grâce à d'autres valeurs à l'aide de boucles, de formules, d'algorithmes. 
+						On peut utiliser un tableau afin de représenter l'état d'un échiquier, le résultat d'une fonction mathématique...</br>
+						
+						Un tableau est constitué d'un nombre fixe (donné à la définition) de composants du même type. 
+						Chaque composant peut être explicitement référencé par le nom du tableau suivi de son indice entre crochets. 
+						Les indices sont des valeurs calculables appartenant toutes au type d'indice. 
+						Le type d'indice est tout type pouvant être interprété comme un entier (Integer, byte, types énumérés, caractères...).
+						Il est possible d'introduire des variables de tous les types au sein d'un tableau : Char, Integer, Real, String</br>
+						Un tableau, tout comme une variable quelconque, doit être déclaré dans la partie déclarative du programme. 
+						On doit toujours spécifier le type des variables qui seront introduites dans le tableau.</br>
+						</br>
+						<u>Syntaxe :</u></br>
+						</br>
+						I-1) Les tableaux à une dimension (vecteurs) :</br> 
+						Syntaxe :        Type <nom_du_tableau> = Tableau[1..N] de Type</br>
+						</br>
+						I-2) Les tableaux à deux dimension : </br>
+						Syntaxe :        Type <nom_du_tableau> = Tableau[1..N,1..N] de Type</br></p>
+					</article>
+			</section>
+			
+						
+			<footer>
+				<p id="bottom"> Ce cours vous est proposé par la LUDUS ACADEMIE tout les droits leurs sont réservés / version 1.0 / dernière MaJ 24/01/17 </p>
+			</footer>
+					
+ 
+							
+ 
+ 
+ 
+	</body>
+	
+	
+	
+	
+	
+
+	
+	
+	
+
+	
+	
+</html>
